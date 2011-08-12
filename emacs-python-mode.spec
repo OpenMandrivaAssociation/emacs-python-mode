@@ -1,13 +1,14 @@
 %define rname	python-mode
+%define tarname	%{rname}.el
 %define name	emacs-%{rname}
-%define version	5.2.0
+%define version	6.0.1
 %define release %mkrel 1
 
 Summary:	An Emacs mode for editing Python code
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{rname}-%{version}.tgz
+Source0:	%{tarname}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Editors
 Url:		https://launchpad.net/python-mode/
@@ -23,15 +24,18 @@ and developing Python programs. Note that this mode is different than
 the one included by default in Emacs.
 
 %prep
-%setup -q -n %{rname}
+%setup -q -n %{tarname}-%{version}
 
 %build
 
 %install
 %__rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_datadir}/emacs/site-lisp
-%__install -m 644 python-mode.el %{buildroot}%{_datadir}/emacs/site-lisp
-emacs -batch -f batch-byte-compile %{buildroot}%{_datadir}/emacs/site-lisp/*.el
+%__install -m 644 *.el %{buildroot}%{_datadir}/emacs/site-lisp
+
+pushd %{buildroot}%{_datadir}/emacs/site-lisp/
+emacs -batch --eval '(progn (byte-compile-file "highlight-indentation.el" t) (byte-compile-file "python-mode.el" t))'
+popd
 
 install -d %{buildroot}%{_sysconfdir}/emacs/site-start.d
 cat <<EOF > %{buildroot}%{_sysconfdir}/emacs/site-start.d/python.el
@@ -44,6 +48,6 @@ EOF
 
 %files
 %defattr(-,root,root)
-%doc NEWS
-%_datadir/emacs/site-lisp/%rname.el*
+%doc LICENSE NEWS README
+%_datadir/emacs/site-lisp/*.el*
 %config(noreplace) %_sysconfdir/emacs/site-start.d/python.el
