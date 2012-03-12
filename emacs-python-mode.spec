@@ -15,8 +15,8 @@ Url:		https://launchpad.net/python-mode/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Conflicts:	python < 2.7.1-5
 BuildArch:	noarch
-Requires:	emacs, emacs-pymacs >= 0.24, python >= 2.7.1-5
-BuildRequires:	emacs, emacs-pymacs >= 0.24, python-devel >= 2.7.1-5
+Requires:	emacs, emacs-pymacs, python >= 2.7.1-5
+BuildRequires:	emacs, emacs-pymacs, python-devel >= 2.7.1-5
 
 %description
 This package contains an Emacs and XEmacs mode for editing, debugging,
