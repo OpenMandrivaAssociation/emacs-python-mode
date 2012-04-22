@@ -1,8 +1,8 @@
 %define rname	python-mode
 %define tarname	%{rname}.el
 %define name	emacs-%{rname}
-%define version	6.0.5
-%define release %mkrel 1
+%define version	6.0.6
+%define release 1
 
 Summary:	An Emacs mode for editing Python code
 Name:		%{name}
@@ -15,7 +15,8 @@ Url:		https://launchpad.net/python-mode/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Conflicts:	python < 2.7.1-5
 BuildArch:	noarch
-Requires:	emacs, emacs-pymacs, python >= 2.7.1-5
+Requires:	emacs, python >= 2.7.1-5
+Suggests:	emacs-pymacs
 BuildRequires:	emacs, python-devel >= 2.7.1-5
 
 %description
@@ -32,8 +33,8 @@ the one included by default in Emacs.
 %__rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_datadir}/emacs/site-lisp
 
-emacs -batch --eval '(progn (byte-compile-file "column-marker.el" t) (byte-compile-file "python-mode.el" t))'
-%__install -m 644 python-mode.el* column-marker.el* %{buildroot}%{_datadir}/emacs/site-lisp
+emacs -batch --eval '(progn (byte-compile-file "python-mode.el" t))'
+%__install -m 644 python-mode.el* %{buildroot}%{_datadir}/emacs/site-lisp
 
 install -d %{buildroot}%{_sysconfdir}/emacs/site-start.d
 cat <<EOF > %{buildroot}%{_sysconfdir}/emacs/site-start.d/python.el
