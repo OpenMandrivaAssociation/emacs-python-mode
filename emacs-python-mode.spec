@@ -1,7 +1,7 @@
 %define rname	python-mode
 %define tarname	%{rname}.el
 %define name	emacs-%{rname}
-%define version	6.0.6
+%define version	6.0.7
 %define release 1
 
 Summary:	An Emacs mode for editing Python code
