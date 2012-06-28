@@ -1,14 +1,14 @@
 %define rname	python-mode
 %define tarname	%{rname}.el
 %define name	emacs-%{rname}
-%define version	6.0.7
+%define version	6.0.10
 %define release 1
 
 Summary:	An Emacs mode for editing Python code
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{tarname}-%{version}.tar.gz
+Source0:	https://launchpad.net/python-mode/trunk/%{version}/+download/%{tarname}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Editors
 Url:		https://launchpad.net/python-mode/
