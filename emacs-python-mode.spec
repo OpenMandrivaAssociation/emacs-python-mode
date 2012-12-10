@@ -51,3 +51,40 @@ EOF
 %doc LICENSE NEWS README
 %_datadir/emacs/site-lisp/*.el*
 %config(noreplace) %_sysconfdir/emacs/site-start.d/python.el
+
+
+%changelog
+* Thu Jun 28 2012 Lev Givon <lev@mandriva.org> 6.0.10-1
++ Revision: 807412
+- Update to 6.0.10.
+
+* Mon May 07 2012 Lev Givon <lev@mandriva.org> 6.0.7-1
++ Revision: 797319
+- Update to 6.0.7.
+
+* Sun Apr 22 2012 Lev Givon <lev@mandriva.org> 6.0.6-1
++ Revision: 792710
+- Update to 6.0.6.
+
+* Tue Mar 13 2012 Lev Givon <lev@mandriva.org> 6.0.5-1
++ Revision: 784708
+- Update to 6.0.5.
+  Add pymacs dependency.
+
+* Mon Jan 16 2012 Lev Givon <lev@mandriva.org> 6.0.4-1
++ Revision: 761652
+- Update to 6.0.4.
+
+* Mon Dec 19 2011 Lev Givon <lev@mandriva.org> 6.0.3-1
++ Revision: 743819
+- Update to 6.0.3
+
+* Fri Aug 12 2011 Lev Givon <lev@mandriva.org> 6.0.1-1
++ Revision: 694250
+- Update to 6.0.1.
+
+* Thu Mar 03 2011 Lev Givon <lev@mandriva.org> 5.2.0-1
++ Revision: 641444
+- import emacs-python-mode
+
+
