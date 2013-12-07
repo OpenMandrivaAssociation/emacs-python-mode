@@ -2,7 +2,7 @@
 %define tarname	%{rname}.el
 %define name	emacs-%{rname}
 %define version	6.0.10
-%define release 1
+%define release 2
 
 Summary:	An Emacs mode for editing Python code
 Name:		%{name}
