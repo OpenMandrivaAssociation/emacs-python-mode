@@ -4,7 +4,7 @@
 Summary:	An Emacs mode for editing Python code
 Name:		emacs-%{rname}
 Version:	6.0.10
-Release:	10
+Release:	11
 Source0:	https://launchpad.net/python-mode/trunk/%{version}/+download/%{tarname}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Editors
